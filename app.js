@@ -36,9 +36,11 @@ app.engine("ejs",ejsMate);
 //g. to apply style.css
 app.use(express.static(path.join(__dirname,"./public")))
 
-app.listen(8080,"localhost",()=>{
-        console.log("app is listening to port 8080");
+const PORT = process.env.PORT || 8080;
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`app is listening on port ${PORT}`);
 });
+
 
 // I. Require Session
 const session = require("express-session");
