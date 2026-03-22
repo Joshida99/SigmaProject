@@ -1,0 +1,58 @@
+<% layout("/Layouts/boilerplate") %>
+<body>
+        <h2 class="offset-5 update"> Update place </h2>
+
+        <div class="row">
+            <div class="col-8 offset-2">
+                <form action="/mainListings/<%= place._id %>?_method=PUT" method="post" class="needs-validation" novalidate>
+                        <div class="mb-3">
+                                <label for="text" class="form-label cols">title :</label>
+                                <input type="text" name="updatePlace[title]" value="<%= place.title %>"  class="form-control" required> 
+                                <div class="valid-feedback">Correct</div>
+                                <div class="invalid-feedback">Name Required</div>
+                        </div>
+                        <div class="mb-3">
+                                <label for="description" class="form-label">description : </label><br> 
+                                <textarea type="text" name="updatePlace[description]" rows="6" cols="50" class="form-control" required ><%= place.description %> </textarea>
+                                <div class="valid-feedback">Correct</div>
+                                <div class="invalid-feedback">Description Required</div>
+                        </div>
+                        
+                         <div class="mb-3">
+                                <label for="image" class="form-label">image link/url :</label>
+                                <input type="text" name="updatePlace[image]" value="<%= place.image %>" class="form-control" required>
+                                <div class="valid-feedback">Correct</div>
+                                <div class="invalid-feedback">Image Link Is Required</div>
+                        </div>
+
+                       <div class="row ">
+                                 <div class="mb-3 col-md-5">
+                                        <label for="price" class="form-label">price :</label>
+                                        <input type="text" name="updatePlace[price]" value="<%= place.price %>" class="form-control" required>
+                                        <div class="valid-feedback">Correct</div>
+                                        <div class="invalid-feedback">Price is Required</div>
+                                </div>
+
+                                <div class="mb-3 col-md-7">
+                                        <label for="country" class="form-label">country :</label> 
+                                        <input type="text" name="updatePlace[country]" value="<%= place.country %>" class="form-control" required>
+                                        <div class="valid-feedback">Correct</div>
+                                        <div class="invalid-feedback">Country Name Required</div>
+                                </div>
+                       </div>
+
+                        <div class="mb-3">
+                                <label for="location" class="form-label">location : </label>
+                                <input type="text" name="updatePlace[location]" value="<%= place.location %>" class="form-control" required>
+                                <div class="valid-feedback">Correct</div>
+                                <div class="invalid-feedback">Location Required</div>
+                        </div>
+
+                        
+                       <br> 
+                       <button type="submit" class="btn btn-dark add-btn offset-5">Save changes</button>  
+                       <br><br><br><br>
+                </form>
+            </div>     
+        </div>
+</body>
